@@ -1,0 +1,225 @@
+body {
+    overflow-x: hidden;
+}
+
+.hero {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    display: block;
+    overflow-x: none;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .35);
+    margin: -10px 0 40px 0;
+
+    .hero-inner {
+        background: rgba(0, 0, 0, .10);
+        position: relative;
+        min-height: 500px;
+    }
+
+    .copy {
+        position: absolute;
+        top: 25%;
+        width: 100%;
+        height: 10em;
+        padding: 0 20px;
+        color: #fff;
+
+        @media screen and (max-width: 40em) {
+            top: 10%;
+        }
+
+        h1 {
+            font-size: 4em;
+            line-height: 1;
+        }
+
+        h3 {
+            font-size: 2em;
+            font-weight: normal;
+        }
+    }
+}
+
+.hero-config {
+    position: absolute;
+    top: 61px;
+    right: 0;
+    width: 400px;
+    max-width: 100%;
+    z-index: 100;
+    padding: 10px 10px 20px;
+    background: #fff;
+    transition: transform .5s cubic-bezier(.23, 1, .32, 1);
+    transform: translateX(100%);
+
+    &.active {
+        transform: translateX(0);
+        box-shadow: -1px 0 2px 0 rgba(0, 0, 0, .25);
+
+        a.hero-config-toggle {
+            background: #fff;
+        }
+    }
+
+    h4 {
+        text-align: center;
+    }
+
+    // Fix label float for CodeMirror inputs
+    .form-group:nth-child(5) > label,
+    .form-group:nth-child(6) > label {
+        float: none;
+    }
+
+    button {
+        background: #f15926;
+        margin: 10px 0 0;
+        float: right;
+    }
+}
+
+a.hero-config-toggle {
+    position: absolute;
+    display: block;
+    width: 35px;
+    height: 40px;
+    right: 400px;
+    z-index: 100;
+    background: rgba(#fff, .5);
+    border-radius: 3px 0 0 3px;
+    text-align: center;
+    line-height: 2.8;
+    transition: background 2s;
+
+    &:hover {
+        background: rgba(#fff, .9);
+        color: #3c3c3c;
+    }
+}
+
+// Code editor text field
+.CodeMirror {
+    height: 175px;
+    line-height: 1.3;
+    border: 1px solid #b5b0b0;
+    padding: 3px;
+}
+
+
+// Hero on/off switch
+
+$toggle-height: 30px;
+$toggle-width: 60px;
+$switch-size: 30px;
+
+$anim-slight-bounce: cubic-bezier(0.34,1.61,0.7,1);
+$anim-speed-normal: 400ms;
+
+$border-color: #dadde1;
+$switch-bg: #2da86c;
+
+.hero-switch {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tgl {
+    position: relative;
+    margin: 0 15px 10px;
+    display: inline-block;
+    height: $toggle-height;
+    cursor: pointer;
+
+    > input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden;
+    }
+
+    .tgl_body {
+        width: $toggle-width;
+        height: $toggle-height;
+        background: white;
+        border: 1px solid $border-color;
+        display: inline-block;
+        position: relative;
+        border-radius: 50px;
+    }
+
+    .tgl_switch {
+        width: $toggle-height;
+        height: $toggle-height;
+        display: inline-block;
+        background-color: white;
+        position: absolute;
+        left: -1px;
+        top: -1px;
+        border-radius: 50%;
+        border: 1px solid darken($border-color, 5%);
+        box-shadow: 0 2px 2px rgba(0,0,0,.13);
+        transition: left $anim-slight-bounce $anim-speed-normal, transform $anim-slight-bounce $anim-speed-normal;
+        z-index: 1;
+    }
+
+    .tgl_track {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+        border-radius: 50px;
+    }
+
+    .tgl_bgd {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: $toggle-width - ($switch-size / 2) + 10; // compensates for animation bounce
+        transition: left $anim-slight-bounce $anim-speed-normal, right $anim-slight-bounce $anim-speed-normal;
+        right: auto;
+        left: -($toggle-width - ($switch-size / 2));
+        background: white;
+    }
+
+    .tgl_bgd-on {
+        right: -10px; // compensates for animation bounce
+        background: $switch-bg;
+    }
+
+    &:hover {
+
+        .tgl_switch {
+            border-color: darken($border-color, 13%);
+            transform: scale(1.06);
+        }
+    }
+
+    &:active {
+
+        .tgl_switch {
+            transform: scale(.95);
+        }
+    }
+
+    > .on ~ .tgl_body {
+
+        > .tgl_switch {
+            left: $toggle-width - $switch-size;
+        }
+
+        .tgl_bgd {
+            right: -($toggle-width - ($switch-size / 2));
+
+            &.tgl_bgd-on {
+                right: auto;
+                left: -10px;
+            }
+        }
+    }
+}

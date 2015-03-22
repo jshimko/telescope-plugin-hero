@@ -1,0 +1,49 @@
+
+<template name="hero">
+  {{#if showHero}}
+    {{#with heroData}}
+    <style type="text/css">
+      {{extraCss}}
+    </style>
+    <section class="hero" style="background-image: url('{{heroImage}}')">
+      <div class="hero-inner">
+        <div class="copy">
+          <h1>{{title}}</h1>
+          <h3>{{subheading}}</h3>
+          {{{extraHtml}}}
+        </div>
+      </div>
+    </section>
+    {{/with}}
+  {{/if}}
+  {{#if isAdmin}}
+    {{> hero_config_overlay}}
+  {{/if}}
+</template>
+
+<template name="hero_config_overlay">
+  <div class="hero-config">
+    <a class="hero-config-toggle" href="#">&#10094;</a>
+    <h4>Hero Settings</h4>
+    {{#autoForm collection="HeroSettings" id="updateHeroForm" type="update" doc=heroSettings}}
+      <div class="hero-switch">
+        <label class="tgl">
+          <input id="heroOn" type="checkbox" class="{{switchState}}"/>
+          <span class="tgl_body">
+            <span class="tgl_switch"></span>
+            <span class="tgl_track">
+              <span class="tgl_bgd"></span>
+              <span class="tgl_bgd tgl_bgd-on"></span>
+            </span>
+          </span>
+        </label>
+      </div>
+      {{> afFormGroup name='heroTitle' label='Primary Heading'}}
+      {{> afFormGroup name='heroSubheading' label='Secondary Heading'}}
+      {{> afFormGroup name='heroImage' label='Background Image'}}
+      {{> afFormGroup name='extraHtml' label='Extra HTML'}}
+      {{> afFormGroup name='extraCss' label='Extra CSS'}}
+      <button type="submit">Save</button>
+    {{/autoForm}}
+  </div>
+</template>
