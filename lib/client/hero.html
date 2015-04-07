@@ -25,25 +25,27 @@
   <div class="hero-config">
     <a class="hero-config-toggle" href="#">&#10094;</a>
     <h4>Hero Settings</h4>
-    {{#autoForm collection="HeroSettings" id="updateHeroForm" type="update" doc=heroSettings}}
-      <div class="hero-switch">
-        <label class="tgl">
-          <input id="heroOn" type="checkbox" class="{{switchState}}"/>
-          <span class="tgl_body">
-            <span class="tgl_switch"></span>
-            <span class="tgl_track">
-              <span class="tgl_bgd"></span>
-              <span class="tgl_bgd tgl_bgd-on"></span>
+    {{#if Template.subscriptionsReady}}
+      {{#autoForm collection="HeroSettings" id="updateHeroForm" type="update" doc=heroSettings}}
+        <div class="hero-switch">
+          <label class="tgl">
+            <input id="heroOn" type="checkbox" class="{{switchState}}"/>
+            <span class="tgl_body">
+              <span class="tgl_switch"></span>
+              <span class="tgl_track">
+                <span class="tgl_bgd"></span>
+                <span class="tgl_bgd tgl_bgd-on"></span>
+              </span>
             </span>
-          </span>
-        </label>
-      </div>
-      {{> afFormGroup name='heroTitle' label='Primary Heading'}}
-      {{> afFormGroup name='heroSubheading' label='Secondary Heading'}}
-      {{> afFormGroup name='heroImage' label='Background Image'}}
-      {{> afFormGroup name='extraHtml' label='Extra HTML'}}
-      {{> afFormGroup name='extraCss' label='Extra CSS'}}
-      <button type="submit">Save</button>
-    {{/autoForm}}
+          </label>
+        </div>
+        {{> afFormGroup name='heroTitle' label='Primary Heading'}}
+        {{> afFormGroup name='heroSubheading' label='Secondary Heading'}}
+        {{> afFormGroup name='heroImage' label='Background Image'}}
+        {{> afFormGroup name='extraHtml' label='Extra HTML'}}
+        {{> afFormGroup name='extraCss' label='Extra CSS'}}
+        <button type="submit">Save</button>
+      {{/autoForm}}
+    {{/if}}
   </div>
 </template>
