@@ -1,18 +1,16 @@
 <template name="hero_layout">
-  {{> UI.dynamic template=css}}
+  {{> css}}
   <div class="outer-wrapper {{currentPage}} {{navLayout}}">
-    {{> UI.dynamic template=mobile_nav}}
+    {{> mobile_nav}}
     <div class="inner-wrapper template-{{pageName}}">
-      {{> UI.dynamic template=nav}}
-      {{#each heroModules}}
-        {{> UI.dynamic template=getTemplate}}
-      {{/each}}
+      {{> nav}}
+      {{> modules "hero"}}
       <div class="content-wrapper">
-        {{> UI.dynamic template=messages}}
+        {{> messages}}
         {{> yield "adminMenu"}}
         {{> yield "postListTop"}}
         {{> yield}}
-        {{> UI.dynamic template=footer}}
+        {{> footer}}
       </div>
       <div class="overlay hidden"></div>
     </div>
