@@ -1,10 +1,12 @@
 # Telescope Hero Banner Plugin
 
-A simple plugin that lets you add a configurable hero banner to your Telescope site.  
+A simple plugin that lets you add a configurable hero banner to your [Telescope][1] site.  
+
+NOTE: This package currently only works with either the latest [devel branch][2] of Telescope or [the packaged version][3] that can be installed via Atmosphere.  All versions soon to be supported (when devel gets merged).
 
 ## Install
 
-```
+```bash
 meteor add jeremy:telescope-plugin-hero
 ```
 
@@ -31,5 +33,9 @@ If you'd like to customize the hero with your own CSS, the markup essentially lo
 
 
 ## Future
-Feature suggestions and pull requests welcome!
+Feature suggestions and pull requests welcome!  Troubles?  Drop me a line [on Github][4].
 
+[1]: http://www.telescopeapp.org/
+[2]: https://github.com/TelescopeJS/Telescope/tree/devel
+[3]: https://atmospherejs.com/telescope/core
+[4]: https://github.com/jshimko/telescope-plugin-hero
