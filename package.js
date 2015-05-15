@@ -1,7 +1,7 @@
 Package.describe({
   name: 'jeremy:telescope-plugin-hero',
   summary: 'A configurable hero banner for Telescope.',
-  version: '0.1.2',
+  version: '0.1.3',
   git: 'https://github.com/jshimko/telescope-plugin-hero.git'
 });
 
