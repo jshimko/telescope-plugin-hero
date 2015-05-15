@@ -13,14 +13,12 @@ Package.onUse(function(api) {
     'templating',
     'jquery',
     'mongo',
-    'aldeed:autoform',
-    'aldeed:simple-schema',
-    'aldeed:template-extension',
-    'perak:codemirror',
-    'telescope:core',
-    'telescope:lib',
-    'fourseven:scss'
+    'perak:codemirror@1.2.3',
+    'telescope:core@0.1.0',
+    'telescope:lib@0.3.1'
   ]);
+
+  api.imply('perak:codemirror@1.2.3');
 
   api.addFiles([
     'lib/client/hero_layout.html',
