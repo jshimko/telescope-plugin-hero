@@ -15,10 +15,11 @@ Package.onUse(function(api) {
     'mongo',
     'aldeed:autoform',
     'aldeed:simple-schema',
+    'aldeed:template-extension',
     'perak:codemirror',
-    'telescope-base',
-    'telescope-lib',
-    'fourseven:scss',
+    'telescope:core',
+    'telescope:lib',
+    'fourseven:scss'
   ]);
 
   api.addFiles([
