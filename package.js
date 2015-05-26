@@ -1,7 +1,7 @@
 Package.describe({
   name: 'jeremy:telescope-plugin-hero',
   summary: 'A configurable hero banner for Telescope.',
-  version: '0.2.2',
+  version: '0.2.3',
   git: 'https://github.com/jshimko/telescope-plugin-hero.git'
 });
 
@@ -14,8 +14,8 @@ Package.onUse(function(api) {
     'jquery',
     'mongo',
     'perak:codemirror@1.2.3',
-    'telescope:core@0.20.2',
-    'telescope:lib@0.20.2'
+    'telescope:core@0.20.4',
+    'telescope:lib@0.20.4'
   ]);
 
   api.imply('perak:codemirror@1.2.3');
