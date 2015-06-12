@@ -47,7 +47,7 @@ iron:location@1.0.7
 iron:middleware-stack@1.0.7
 iron:router@1.0.7
 iron:url@1.0.7
-jeremy:telescope-plugin-hero@0.2.4
+jeremy:telescope-plugin-hero@0.2.5
 jparker:crypto-core@0.1.0
 jparker:crypto-md5@0.1.1
 jparker:gravatar@0.3.1
