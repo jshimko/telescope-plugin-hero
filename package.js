@@ -10,12 +10,8 @@ Package.onUse(function(api) {
   api.versionsFrom("METEOR@1.0.4");
 
   api.use([
-    'templating',
-    'jquery',
-    'mongo',
-    'perak:codemirror@1.2.3',
     'telescope:core@0.20.4',
-    'telescope:lib@0.20.4'
+    'perak:codemirror@1.2.3'
   ]);
 
   api.imply('perak:codemirror@1.2.3');
