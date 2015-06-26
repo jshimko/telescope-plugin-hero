@@ -4,8 +4,6 @@ A simple plugin that lets you add a configurable hero banner to your [Telescope]
 
 Example: http://telescope-hero.meteor.com (you get exactly what you see there simply by adding this package)
 
-NOTE: This package currently only works with either the latest [devel branch][2] of Telescope or [the packaged version][3] that can be installed via Atmosphere.  All Telescope versions soon to be supported (when devel gets merged).
-
 
 ## Install
 

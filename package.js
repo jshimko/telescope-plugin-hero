@@ -1,7 +1,7 @@
 Package.describe({
   name: 'jeremy:telescope-plugin-hero',
   summary: 'A configurable hero banner for Telescope.',
-  version: '0.2.5',
+  version: '0.2.6',
   git: 'https://github.com/jshimko/telescope-plugin-hero.git'
 });
 
@@ -10,7 +10,7 @@ Package.onUse(function(api) {
   api.versionsFrom("METEOR@1.0.4");
 
   api.use([
-    'telescope:core@0.20.4',
+    'telescope:core@0.20.6',
     'perak:codemirror@1.2.3'
   ]);
 
