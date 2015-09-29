@@ -10,11 +10,11 @@ Package.onUse(function(api) {
   api.versionsFrom("METEOR@1.0.4");
 
   api.use([
-    'telescope:core@0.22.2',
-    'perak:codemirror@1.2.3'
+    'telescope:core@0.25.0',
+    'perak:codemirror@1.2.7'
   ]);
 
-  api.imply('perak:codemirror@1.2.3');
+  api.imply('perak:codemirror@1.2.7');
 
   api.addFiles([
     'lib/client/hero.html',
