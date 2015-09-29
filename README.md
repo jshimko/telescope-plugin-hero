@@ -16,7 +16,7 @@ meteor add jeremy:telescope-plugin-hero
 
 Once logged in as an admin, you should see a small tab at the top right of the page that will toggle the hero configuration window.  You can configure the background image, main and secondary headings, some additional HTML (appears below the main headings), and some custom CSS.  
 
-Note that any styles entered in the custom CSS box can effect the site globally, so make sure to be specific enough with your selectors. Also, when you turn the hero off with the switch on the overlay, the custom CSS will be disabled as well.
+Note that any styles entered in the custom CSS box can effect the site globally, so make sure to be specific enough with your selectors.  Also note that those styles will only be applied on routes where the hero banner is on the page (currently only the post list). And when you turn the hero off with the switch on the overlay, the custom CSS will be disabled as well.
 
 If you'd like to customize the hero with your own CSS, the markup essentially looks like this...
 
